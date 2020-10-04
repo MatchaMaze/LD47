@@ -16,6 +16,7 @@ public class Aging:MonoBehaviour
         Born = WorldTime.Time;
         AgeF = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.flipX = ( Random.Range(0.0f, 1.0f) >= 0.5f );
     }
 
     // Update is called once per frame

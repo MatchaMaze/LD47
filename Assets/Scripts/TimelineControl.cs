@@ -32,6 +32,7 @@ public class TimelineControl : MonoBehaviour
     
     void Update()
     {
+       // Debug.Log(state);
         switch(state)
         {
             case 0:
@@ -53,7 +54,7 @@ public class TimelineControl : MonoBehaviour
                 }                
                 break;
             case 2:
-                if(Input.GetAxis("Horizontal") != 0 && IntroTimelineObj.GetComponent<PlayableDirector>().time > 3.8f)
+                if(Input.GetAxis("Horizontal") != 0 && IntroTimelineObj.GetComponent<PlayableDirector>().time >= 3.99f)
                 {
                     PressMoveKeyAnimator.SetTrigger("FadeOut");
                     IntroTimelineObj.SetActive(false);
