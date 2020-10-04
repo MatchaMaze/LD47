@@ -13,8 +13,11 @@ public class LoopController : MonoBehaviour
 
     void Update()
     {
-        WorldTime.Time += (Input.GetAxis("Horizontal") * Speed * Time.deltaTime/90f)*0.25f;
-        Debug.Log(WorldTime.Time);
-        transform.Rotate(new Vector3(0, 0, -Input.GetAxis("Horizontal") * Speed*Time.deltaTime));
+        if(TimelineControl.state == 3)
+        {
+            WorldTime.Time += ( Input.GetAxis("Horizontal") * Speed * Time.deltaTime / 90f ) * 0.25f;
+            Debug.Log(WorldTime.Time);
+            transform.Rotate(new Vector3(0, 0, -Input.GetAxis("Horizontal") * Speed * Time.deltaTime));
+        }        
     }
 }

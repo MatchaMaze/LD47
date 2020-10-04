@@ -1,35 +1,44 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Aging : MonoBehaviour
+public class Aging:MonoBehaviour
 {
-
     public List<Sprite> Ages;
 
-    float Born;
-    float Age;
-    SpriteRenderer spriteRenderer;
+    private float Born;
+    
+    private float AgeF;
+    private int AgeI;
+    private SpriteRenderer spriteRenderer;
 
-    void Start()
+    private void Start()
     {
         Born = WorldTime.Time;
-        Age = 0;
+        AgeF = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Age = Mathf.RoundToInt(WorldTime.Time - Born);
-        if(Age >= 0 && Age < Ages.Count)
+        AgeF = WorldTime.Time - Born;
+        AgeI = Mathf.RoundToInt(AgeF);
+        if(AgeI >= 0 && AgeI < Ages.Count)
         {
-            spriteRenderer.enabled = true;
-            spriteRenderer.sprite = Ages[Mathf.RoundToInt(Age)];
+            spriteRenderer.sprite = Ages[AgeI];
         }
         else
         {
+            Destroy(gameObject);
+        }
+
+        if(AgeF % 1 > 0.3f && AgeF % 1 < 0.7f)
+        {
             spriteRenderer.enabled = false;
+        }
+        else
+        {
+            spriteRenderer.enabled = true;
         }
     }
 }
