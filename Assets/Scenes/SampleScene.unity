@@ -7237,7 +7237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Left Arrow or D key to move
+  m_text: Press Right Arrow or D key to move
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8505514aaf11e1042a2e9ad79a120645, type: 2}
   m_sharedMaterial: {fileID: 3513631102405131677, guid: 8505514aaf11e1042a2e9ad79a120645, type: 2}
@@ -7264,8 +7264,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 205.5
-  m_fontSizeBase: 205.5
+  m_fontSize: 196.28
+  m_fontSizeBase: 196.28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
